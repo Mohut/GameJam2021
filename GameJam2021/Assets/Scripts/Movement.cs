@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Movement : MonoBehaviour
 {
@@ -10,13 +11,19 @@ public class Movement : MonoBehaviour
     private GameObject viewArea;
     private float time;
     [SerializeField] private SpriteRenderer spriteToDelete;
-    private bool convinced;
-    
+    [SerializeField] private bool convinced;
+    private string key = "convinced";
+    [SerializeField] private bool enemyConvinced;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Collider2D m_Collider;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         time = 2;
         convinced = false;
+        m_Collider = GetComponent<Collider2D>();
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -33,6 +40,17 @@ public class Movement : MonoBehaviour
         }
     }
 
+    private void Convinced()
+    {
+        if (convinced)
+        {
+            player.GetComponent<moveHero>().score++;
+            convinced = false;
+            PlayerPrefs.SetInt(key, player.GetComponent<moveHero>().score);
+            Debug.Log(PlayerPrefs.GetInt(key));
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag.Equals("Player"))
@@ -46,7 +64,8 @@ public class Movement : MonoBehaviour
             spriteToDelete.enabled = false;
             convinced = true;
             body.rotation = 0;
-            FindObjectOfType<moveHero>().convinced++;
+            m_Collider.enabled = false;
+            Convinced();
         }
     }
 

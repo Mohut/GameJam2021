@@ -328,6 +328,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1178572217}
     - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
         type: 3}
       propertyPath: sprite
@@ -475,6 +490,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1178572217}
     - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
         type: 3}
       propertyPath: sprite
@@ -817,6 +847,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1178572217}
     - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
         type: 3}
       propertyPath: sprite
@@ -1032,7 +1077,7 @@ MonoBehaviour:
   panSpeed: 20
   speed: 10
   movement: {x: 0, y: 0}
-  convinced: 0
+  score: 0
 --- !u!212 &1178572221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1611,6 +1656,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1178572217}
     - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
         type: 3}
       propertyPath: sprite
@@ -1857,6 +1917,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416045, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1178572217}
     - target: {fileID: 6098672954930416047, guid: 30ddb2fdb30934e429027e998b265585,
         type: 3}
       propertyPath: sprite

@@ -9,19 +9,18 @@ public class moveHero : MonoBehaviour
     public float panSpeed = 20f;
     public float speed = 10.0f;
     public Vector2 movement;
-
-    public int convinced;
+    public int score;
+    
     // Start is called before the first frame update
     void Start()
     {
         rbody = this.GetComponent<Rigidbody2D>();
-        convinced = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-       // movement = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
+        // movement = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
         Vector3 pos = transform.position;
  
          if (Input.GetKey ("w") || Input.GetKey(KeyCode.UpArrow)) {
@@ -45,7 +44,6 @@ public class moveHero : MonoBehaviour
     void FixedUpdate()
     {
         MoveCharacter(movement);
-
     }
     void MoveCharacter(Vector2 direction)
     {

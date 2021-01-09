@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Vector2 movementSpeed;
+    [SerializeField] private Sprite sprite;
     private Rigidbody2D body;
     private GameObject viewArea;
-    private BoxCollider2D collider;
+    private float time;
+    [SerializeField] private SpriteRenderer spriteToDelete;
+    private bool convinced;
+    
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        collider = GetComponent<BoxCollider2D>();
+        time = 2;
+        convinced = false;
     }
 
     void Update()
@@ -19,7 +25,7 @@ public class Movement : MonoBehaviour
     }
     
     //checks collision and inverts the movementSpeed variable so the person moves in the opposite direction
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Equals("Border"))
         {
@@ -27,13 +33,27 @@ public class Movement : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            time -= Time.deltaTime;
+        }
+
+        if (time <= 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = sprite;
+            spriteToDelete.enabled = false;
+            convinced = true;
+            body.rotation = 0;
+            FindObjectOfType<moveHero>().convinced++;
+        }
+    }
+
     private void BorderHit()
     {
         movementSpeed = -movementSpeed;
-        //transform.localPosition = -transform.localPosition;
-       
-       
+        if(!convinced)
         body.rotation += 180;
-
     }
 }

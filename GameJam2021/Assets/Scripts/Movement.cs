@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Collider2D m_Collider;
     [SerializeField] private AudioSource audioSource;
+    private bool gotPoint;
     private bool isPlaying;
 
     void Start()
@@ -28,6 +29,7 @@ public class Movement : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         isPlaying = false;
         audioSource.volume = 0.3f;
+        gotPoint = false;
     }
 
     void Update()
@@ -48,7 +50,11 @@ public class Movement : MonoBehaviour
     {
         if (convinced)
         {
-            player.GetComponent<moveHero>().score++;
+            if (!gotPoint)
+            {
+                player.GetComponent<moveHero>().score++;
+                gotPoint = true;
+            }
             convinced = false;
             PlayerPrefs.SetInt(key, player.GetComponent<moveHero>().score);
             Debug.Log(PlayerPrefs.GetInt(key));
@@ -74,7 +80,6 @@ public class Movement : MonoBehaviour
             spriteToDelete.enabled = false;
             convinced = true;
             body.rotation = 0;
-            m_Collider.enabled = false;
             Convinced();
         }
     }

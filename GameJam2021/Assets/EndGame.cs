@@ -10,7 +10,6 @@ public class EndGame : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            PlayerPrefs.SetInt("convinced", FindObjectOfType<moveHero>().convinced);
             SceneManager.LoadScene("EndScreen");
         }
     }

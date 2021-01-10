@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private bool enemyConvinced;
     [SerializeField] private GameObject player;
     [SerializeField] private Collider2D m_Collider;
+    [SerializeField] private AudioSource audioSource;
+    private bool isPlaying;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class Movement : MonoBehaviour
         convinced = false;
         m_Collider = GetComponent<Collider2D>();
         player = GameObject.FindWithTag("Player");
+        isPlaying = false;
+        audioSource.volume = 0.3f;
     }
 
     void Update()
@@ -56,6 +60,12 @@ public class Movement : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             time -= Time.deltaTime;
+            if (!isPlaying)
+            {
+                audioSource.Play();
+                isPlaying = true;
+            }
+            
         }
 
         if (time <= 0)
@@ -67,6 +77,12 @@ public class Movement : MonoBehaviour
             m_Collider.enabled = false;
             Convinced();
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        audioSource.Stop();
+        isPlaying = false;
     }
 
     private void BorderHit()
